@@ -38,14 +38,13 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-var creatElements = function () {
+var appendWizards = function (arr) {
   var similarListElement = userDialog.querySelector('.setup-similar-list');
   var fragment = document.createDocumentFragment();
-  for (var i = 0; i < wizards.length; i++) {
-    fragment.appendChild(renderWizard(wizards[i]));
+  for (var i = 0; i < arr.length; i++) {
+    fragment.appendChild(renderWizard(arr[i]));
   }
   similarListElement.appendChild(fragment);
 };
 
-generateWizards(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLORS, EYES_COLORS, wizardCount);
-creatElements();
+appendWizards(generateWizards(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLORS, EYES_COLORS, WIZARD_COUNT));
