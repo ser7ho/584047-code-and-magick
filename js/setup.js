@@ -12,13 +12,19 @@ userDialog.classList.remove('hidden');
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
 
 var generateWizards = function (names, surnames, coatColors, eyesColors, count) {
+  var wizards = [];
   for (var i = 0; i < count; i++) {
     wizards[i] = {
-      name: names[Math.floor(Math.random() * names.length)] + ' ' + surnames[Math.floor(Math.random() * surnames.length)],
-      coatColor: coatColors[Math.floor(Math.random() * coatColors.length)],
-      eyesColor: eyesColors[Math.floor(Math.random() * eyesColors.length)]
+      name: names[generateWizardElement(names)] + ' ' + surnames[generateWizardElement(surnames)],
+      coatColor: coatColors[generateWizardElement(coatColors)],
+      eyesColor: eyesColors[generateWizardElement(eyesColors)]
     };
   }
+  return wizards;
+};
+
+var generateWizardElement = function (arr) {
+  return Math.floor(Math.random() * arr.length);
 };
 
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
