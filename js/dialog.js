@@ -1,6 +1,5 @@
 'use strict';
 (function () {
-
   var setup = document.querySelector('.setup');
   var dialogHandler = setup.querySelector('.upload');
 
@@ -46,11 +45,9 @@
         };
         dialogHandler.addEventListener('click', onClickPreventDefault);
       }
-
     };
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
-
 })();
