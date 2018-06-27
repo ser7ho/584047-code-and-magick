@@ -24,6 +24,15 @@
         }
       }
       return maxElement;
+    },
+    error: function (message) {
+      var error = document.querySelector('.error');
+      error.style.display = 'block';
+      error.textContent = message;
+      document.addEventListener('click', function () {
+        error.style.display = '';
+        error.textContent = '';
+      });
     }
   };
 })();
