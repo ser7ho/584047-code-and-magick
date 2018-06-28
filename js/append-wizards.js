@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-
+  var WIZARDS_COUNT = 4;
   var setup = document.querySelector('.setup');
   setup.querySelector('.setup-similar').classList.remove('hidden');
 
@@ -19,7 +19,7 @@
   window.appendWizards = function (arr) {
     var similarListElement = setup.querySelector('.setup-similar-list');
     var fragment = document.createDocumentFragment();
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < WIZARDS_COUNT; i++) {
       fragment.appendChild(renderWizard(arr[i]));
     }
     similarListElement.appendChild(fragment);
