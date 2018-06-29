@@ -18,6 +18,9 @@
   var openPopup = function () {
     setup.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
+    window.backend.load(function (wizards) {
+      window.appendWizards(wizards);
+    }, window.utils.error);
   };
 
   var closePopup = function () {
