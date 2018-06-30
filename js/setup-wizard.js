@@ -9,13 +9,16 @@
   var wizardEyes = document.querySelector('.setup-wizard .wizard-eyes');
   var setup = document.querySelector('.setup');
   var wizardFireball = setup.querySelector('.setup-fireball-wrap');
+  var eyesColor = setup.querySelector('input[name="eyes-color"]');
 
   var onWizardCoatClick = function () {
     setupWizard(COAT_COLORS, wizardCoat, 'coat-color');
+    window.wizards.updateWizards(wizardCoat.style.fill, eyesColor.value);
   };
 
   var onWizardEyesClick = function () {
     setupWizard(EYES_COLORS, wizardEyes, 'eyes-color');
+    window.wizards.updateWizards(wizardCoat.style.fill, eyesColor.value);
   };
 
   var onWizardFireballClick = function () {

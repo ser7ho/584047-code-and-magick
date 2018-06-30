@@ -19,7 +19,7 @@
     setup.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
     window.backend.load(function (wizards) {
-      window.appendWizards(wizards);
+      window.wizards.appendWizards(wizards);
     }, window.utils.error);
   };
 
